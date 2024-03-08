@@ -3,15 +3,19 @@
 %store_elements;
 
 <!-- DTD for supplier information -->
-<!ELEMENT supplier EMPTY>
-<!ATTLIST supplier id ID #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT supplier (name)>
+
+<!-- Order -->
+<!ELEMENT total_cost (#PCDATA)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT order (total_cost, time, date)>
 
 <!--DTD for product -->
 <!ELEMENT cost (#PCDATA)>
 <!ELEMENT quantity (#PCDATA)>
-<!ELEMENT product (supplier, cost, quantity)>
-<!ATTLIST product id ID #REQUIRED>
+<!ELEMENT product (supplier, cost, quantity, order)>
 
 <!-- Supplier contract -->
 <!ELEMENT supplier_contract (supplier, store)>
-<!ATTLIST supplier_contract id ID #REQUIRED>
