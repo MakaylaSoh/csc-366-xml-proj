@@ -1,0 +1,34 @@
+<!-- DTD for employee information -->
+
+<!-- "import" store dtd -->
+<!ENTITY % store_elements SYSTEM "store.dtd">
+%store_elements;
+
+<!-- Bank -->
+<!ELEMENT account_number (#PCDATA)>
+<!ELEMENT name_on_account (#PCDATA)>
+<!ELEMENT bank_name (#PCDATA)>
+
+<!ELEMENT bank (account_number, name_on_account, bank_name)>
+<!ATTLIST bank id ID #REQUIRED>
+<!ATTLIST bank employee_id IDREF #IMPLIED>
+
+<!-- Employee -->
+<!ELEMENT firstname (#PCDATA)>
+<!ELEMENT lastname (#PCDATA)>
+<!ELEMENT position (#PCDATA)>
+<!ELEMENT birthday (#PCDATA)>  <!-- expected format: YYYY-MM-DD -->
+<!ELEMENT hourly_rate (#PCDATA)>
+
+<!ELEMENT employee (firstname, lastname, position, store, bank, birthday, hourly_rate)>
+<!ATTLIST employee id ID #REQUIRED>
+
+<!-- Scheduled work shift -->
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT clock_in_time (#PCDATA)>
+<!ELEMENT clock_out_time (#PCDATA)>
+<!ELEMENT total_hours (#PCDATA)>
+
+<!ELEMENT scheduled_work_shift (date, clock_in_time, clock_out_time, total_hours)>
+<!ATTLIST scheduled_work_shift id ID #REQUIRED>
+<!ATTLIST scheduled_work_shift employee_id IDREF #IMPLIED>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE people SYSTEM "dtd/employee.dtd">
+
+<employee id="ID1">
+    <firstname>first1</firstname>
+    <lastname>last1</lastname>
+    <position>manager</position>
+    <store id="ID2">
+        <address>
+            <country>Country1</country>
+            <state>State1</state>
+            <city>City1</city>
+            <street>Street1</street>
+            <zip>11111</zip>
+        </address>
+    </store>
+    <bank id="ID3" employee_id="ID1">
+        <account_number></account_number>
+        <name_on_account></name_on_account>
+        <bank_name></bank_name>
+    </bank>
+    <birthday>2002-09-12</birthday> 
+    <hourly_rate>20</hourly_rate>
+</employee>

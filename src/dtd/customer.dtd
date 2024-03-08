@@ -1,0 +1,5 @@
+<!ELEMENT firstname (#PCDATA)>
+<!ELEMENT lastname (#PCDATA)>
+
+<!ELEMENT customer (id, firstname, lastname)>
+<!ATTLIST customer id ID #REQUIRED>
