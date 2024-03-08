@@ -31,7 +31,6 @@ CREATE TABLE xml_supplier_contract (
 );
 
 
-
 INSERT INTO xml_supplier (xml_doc) VALUES  (
 '<supplier_contract id="sc2">
      <supplier id="s2"/>
