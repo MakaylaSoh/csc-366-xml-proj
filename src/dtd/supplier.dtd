@@ -1,0 +1,17 @@
+<!-- "import" store dtd -->
+<!ENTITY % store_elements SYSTEM "store.dtd">
+%store_elements;
+
+<!-- DTD for supplier information -->
+<!ELEMENT supplier EMPTY>
+<!ATTLIST supplier id ID #REQUIRED>
+
+<!--DTD for product -->
+<!ELEMENT cost (#PCDATA)>
+<!ELEMENT quantity (#PCDATA)>
+<!ELEMENT product (supplier, cost, quantity)>
+<!ATTLIST product id ID #REQUIRED>
+
+<!-- Supplier contract -->
+<!ELEMENT supplier_contract (supplier, store)>
+<!ATTLIST supplier_contract id ID #REQUIRED>

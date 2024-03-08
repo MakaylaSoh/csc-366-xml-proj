@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE supplier_elements SYSTEM "dtd/supplier.dtd">
+
+<supplier_contract id="sc2">
+     <supplier id="s2"/>
+        <store id="ID2">
+            <address>
+                <country>Country1</country>
+                <state>State1</state>
+                <city>City1</city>
+                <street>Street1</street>
+                <zip>11111</zip>
+            </address>
+        </store>
+</supplier_contract>
