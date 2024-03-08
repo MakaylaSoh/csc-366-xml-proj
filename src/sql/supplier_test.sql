@@ -2,6 +2,11 @@ DROP DATABASE IF EXISTS supplier_db;
 CREATE DATABASE IF NOT EXISTS supplier_db;
 USE supplier_db;
 
+CREATE TABLE xml_store (
+  id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  xml_doc TEXT
+);
+
 CREATE TABLE xml_supplier (
   id INTEGER PRIMARY KEY AUTO_INCREMENT,
   xml_doc TEXT
@@ -23,6 +28,7 @@ CREATE TABLE xml_product (
 );
 
 CREATE TABLE xml_supplier_contract (
+  id INTEGER PRIMARY KEY AUTO_INCREMENT,
   supplier_id INTEGER,
   store_id INTEGER,
   xml_doc TEXT,
@@ -30,13 +36,28 @@ CREATE TABLE xml_supplier_contract (
   FOREIGN KEY (store_id) REFERENCES xml_store(id)
 );
 
+INSERT INTO xml_store (xml_doc) VALUES  (
+'<?xml version="1.0"?>
+<store>
+  <address>
+    <country>country1</country>
+    <state>state1</state>
+    <city>city1</city>
+    <street>street1</street>
+    <zip>11111</zip>
+  </address>
+</store>');
+
+INSERT INTO xml_supplier (xml_doc) VALUES  (
+'<supplier></supplier>');
+
 INSERT INTO xml_order (xml_doc) VALUES  (
 '<order> 
     <order_time>2020-01-08T05:01:04</order_time>
     <order_date>2020-01-08</order_date> 
 </order>');
 
-INSERT INTO xml_supplier_contract (supplier_id, store_id, xml_doc) VALUES (1, 1) (
+INSERT INTO xml_supplier_contract (supplier_id, store_id, xml_doc) VALUES (1, 1,
 '<supplier_contract>
      <supplier/>
         <store id>
