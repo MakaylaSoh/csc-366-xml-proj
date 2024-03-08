@@ -8,7 +8,7 @@ CREATE TABLE xml_store (
 );
 
 CREATE TABLE xml_supplier (
-  id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  id INTEGER PRIMARY KEY AUTO_INCREMENT
   xml_doc TEXT
 );
 
