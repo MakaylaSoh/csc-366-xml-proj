@@ -1,21 +1,13 @@
 <!-- "import" store dtd -->
-<!ENTITY % store_elements SYSTEM "store.dtd">
-%store_elements;
+<!ENTITY % store_element SYSTEM "store.dtd">
+%store_element;
 
-<!-- DTD for supplier information -->
+<!-- Supplier Contract -->
+<!ELEMENT start_date (#PCDATA)>
+<!ELEMENT end_date (#PCDATA)>
+<!ELEMENT details (#PCDATA)>
+<!ELEMENT contract (start_date, end_date, details)>
+
+<!-- Supplier -->
 <!ELEMENT name (#PCDATA)>
-<!ELEMENT supplier (name)>
-
-<!-- Order -->
-<!ELEMENT total_cost (#PCDATA)>
-<!ELEMENT order_time (#PCDATA)>
-<!ELEMENT order_date (#PCDATA)>
-<!ELEMENT order (total_cost, time, date)>
-
-<!--DTD for product -->
-<!ELEMENT cost (#PCDATA)>
-<!ELEMENT quantity (#PCDATA)>
-<!ELEMENT product (supplier, cost, quantity, order)>
-
-<!-- Supplier contract -->
-<!ELEMENT supplier_contract (supplier, store)>
+<!ELEMENT supplier (name, address, contract)>

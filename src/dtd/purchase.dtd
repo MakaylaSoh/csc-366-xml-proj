@@ -1,0 +1,32 @@
+<!-- 
+A Purchase consists of both a Customer (payment methods info) and an Order (specifies product(s) purchased).
+A rewards accout is separate.
+ -->
+
+<!-- Product -->
+<!ELEMENT item_name (#PCDATA)>
+<!ELEMENT supplier_name (#PCDATA)>
+<!ELEMENT quantity (#PCDATA)>
+<!ELEMENT unit_price (#PCDATA)>
+<!ELEMENT product (item_name, supplier_name, quantity, unit_price)>
+
+<!-- Order -->
+<!ELEMENT total_cost (#PCDATA)>
+<!ELEMENT order_time (#PCDATA)>
+<!ELEMENT order_date (#PCDATA)>
+<!ELEMENT order (total_cost, order_time, order_date, product+)>
+
+<!-- Customer -->
+<!ELEMENT payment_method (#PCDATA)>
+<!ELEMENT card_number (#PCDATA)>
+<!ELEMENT customer (payment_method, card_number?)>
+
+<!-- Purchase  -->
+<!ELEMENT purchase (customer, order)>
+
+<!-- Rewards Account -->
+<!ELEMENT account_number (#PCDATA)>
+<!ELEMENT phone_number (#PCDATA)>
+<!ELEMENT name_on_account (#PCDATA)>
+<!ELEMENT total_points (#PCDATA)>
+<!ELEMENT rewards_account (account_number, phone_number, name_on_account, total_points)>

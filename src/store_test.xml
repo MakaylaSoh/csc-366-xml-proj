@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE people SYSTEM "dtd/store.dtd">
+
+<store>
+  <address>
+    <country>country1</country>
+    <state>state1</state>
+    <city>city1</city>
+    <street>street1</street>
+    <zip>11111</zip>
+  </address>
+  <employee>
+    <firstname>firstname1</firstname>
+    <lastname>lastname1</lastname>
+    <position>manager</position>
+    <bank>
+      <account_number>1</account_number>
+      <name_on_account>firstname1 lastname1</name_on_account>
+      <bank_name>bank1</bank_name>
+    </bank>
+    <birthday>2002-09-12</birthday>
+    <hourly_rate>20.25</hourly_rate>
+    <scheduled_work_shift>
+      <date>2024-03-01</date>
+      <clock_in_time>09:15</clock_in_time>
+      <clock_out_time>18:30</clock_out_time>
+      <total_hours>09.25</total_hours>
+    </scheduled_work_shift>
+    <scheduled_work_shift>
+      <date>2024-03-02</date>
+      <clock_in_time>9:00</clock_in_time>
+      <clock_out_time>18:00</clock_out_time>
+      <total_hours>09.00</total_hours>
+    </scheduled_work_shift>
+    <scheduled_work_shift>
+      <date>2024-03-03</date>
+      <clock_in_time>09:00</clock_in_time>
+      <clock_out_time>19:00</clock_out_time>
+      <total_hours>10.00</total_hours>
+    </scheduled_work_shift>
+  </employee>
+  <employee>
+    <firstname>firstname2</firstname>
+    <lastname>lastname2</lastname>
+    <position>crew</position>
+    <bank>
+      <account_number>2</account_number>
+      <name_on_account>firstname2 lastname2</name_on_account>
+      <bank_name>bank2</bank_name>
+    </bank>
+    <birthday>2001-07-30</birthday>
+    <hourly_rate>16.50</hourly_rate>
+    <scheduled_work_shift>
+      <date>2024-03-02</date>
+      <clock_in_time>07:00</clock_in_time>
+      <clock_out_time>12:30</clock_out_time>
+      <total_hours>05.50</total_hours>
+    </scheduled_work_shift>
+    <scheduled_work_shift>
+      <date>2024-03-03</date>
+      <clock_in_time>07:00</clock_in_time>
+      <clock_out_time>01:00</clock_out_time>
+      <total_hours>06.00</total_hours>
+    </scheduled_work_shift>
+    <scheduled_work_shift>
+      <date>2024-03-04</date>
+      <clock_in_time>16:00</clock_in_time>
+      <clock_out_time>21:00</clock_out_time>
+      <total_hours>05.00</total_hours>
+    </scheduled_work_shift>
+  </employee>
+  <employee>
+    <firstname>firstname3</firstname>
+    <lastname>lastname3</lastname>
+    <position>crew</position>
+    <bank>
+      <account_number>3</account_number>
+      <name_on_account>firstname3 lastname3</name_on_account>
+      <bank_name>bank3</bank_name>
+    </bank>
+    <birthday>1997-01-14</birthday>
+    <hourly_rate>16.72</hourly_rate>
+    <scheduled_work_shift>
+      <date>2024-03-02</date>
+      <clock_in_time>16:00</clock_in_time>
+      <clock_out_time>21:00</clock_out_time>
+      <total_hours>05.00</total_hours>
+    </scheduled_work_shift>
+    <scheduled_work_shift>
+      <date>2024-03-03</date>
+      <clock_in_time>16:00</clock_in_time>
+      <clock_out_time>21:00</clock_out_time>
+      <total_hours>05.00</total_hours>
+    </scheduled_work_shift>
+    <scheduled_work_shift>
+      <date>2024-03-03</date>
+      <clock_in_time>16:00</clock_in_time>
+      <clock_out_time>21:00</clock_out_time>
+      <total_hours>05.00</total_hours>
+    </scheduled_work_shift>
+  </employee>
+  <order>
+    <total_cost>60.00</total_cost>
+    <order_time>02:00</order_time>
+    <order_date>2024-04-04</order_date>
+    <product>
+      <item_name>12oz Coke Bottle</item_name>
+      <supplier_name>Coca Cola</supplier_name>
+      <quantity>50</quantity>
+      <unit_price>0.99</unit_price>
+    </product>
+  </order>
+    <order>
+    <total_cost>60.00</total_cost>
+    <order_time>06:00</order_time>
+    <order_date>2024-03-04</order_date>
+    <product>
+      <item_name>Frozen Minibons</item_name>
+      <supplier_name>Cinnabon</supplier_name>
+      <quantity>100</quantity>
+      <unit_price>2.50</unit_price>
+    </product>
+  </order>
+</store>

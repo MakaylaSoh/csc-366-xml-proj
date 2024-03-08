@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE supplier_elements SYSTEM "dtd/purchase.dtd">
+
+<purchase>
+  <customer>
+    <payment_method>debit</payment_method>
+    <card_number>*****2222</card_number>
+  </customer>
+  <order>
+    <total_cost>14.69</total_cost>
+    <order_time>12:22</order_time>
+    <order_date>2024-03-17</order_date>
+    <product>
+      <item_name>chicken</item_name>
+      <supplier_name>supplier4</supplier_name>
+      <quantity>2</quantity>
+      <unit_price>2.30</unit_price>
+    </product>
+    <product>
+      <item_name>ice cream</item_name>
+      <supplier_name>supplier4</supplier_name>
+      <quantity>1</quantity>
+      <unit_price>4.89</unit_price>
+    </product>
+    <product>
+      <item_name>peanut butter</item_name>
+      <supplier_name>supplier5</supplier_name>
+      <quantity>1</quantity>
+      <unit_price>4.50</unit_price>
+    </product>
+  </order>
+</purchase>

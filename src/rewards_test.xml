@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE supplier_elements SYSTEM "dtd/purchase.dtd">
+
+<rewards_account>
+  <account_number>3</account_number>
+  <phone_number>(333)333-3333</phone_number>
+  <name_on_account>name1</name_on_account>
+  <total_points>10</total_points>
+</rewards_account>

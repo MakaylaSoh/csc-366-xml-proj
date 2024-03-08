@@ -1,3 +1,33 @@
+<!-- 
+Employee holds Bank and Work Shift.
+Store holds Employee.
+ -->
+
+<!ENTITY % purchase_element SYSTEM "purchase.dtd">
+%purchase_element;
+
+<!-- Bank -->
+<!ELEMENT bank_name (#PCDATA)>
+<!ELEMENT bank (account_number, name_on_account, bank_name)>
+
+<!-- Scheduled work shift -->
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT clock_in_time (#PCDATA)>
+<!ELEMENT clock_out_time (#PCDATA)> 
+<!ELEMENT total_hours (#PCDATA)> 
+
+<!ELEMENT scheduled_work_shift (date, clock_in_time, clock_out_time, total_hours)>
+
+<!-- Employee -->
+<!ELEMENT firstname (#PCDATA)>
+<!ELEMENT lastname (#PCDATA)>
+<!ELEMENT position (#PCDATA)>
+<!ELEMENT birthday (#PCDATA)>  <!-- expected DATE format -->
+<!ELEMENT hourly_rate (#PCDATA)>
+
+<!ELEMENT employee (firstname, lastname, position, bank, birthday, hourly_rate, scheduled_work_shift*)>
+
+<!-- Address -->
 <!ELEMENT country (#PCDATA)>
 <!ELEMENT state (#PCDATA)>
 <!ELEMENT city (#PCDATA)>
@@ -6,4 +36,5 @@
 
 <!ELEMENT address (country, state, city, street, zip)>
 
-<!ELEMENT store (address)>
+<!-- Store -->
+<!ELEMENT store (address, employee+, order+)>

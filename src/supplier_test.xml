@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE supplier_elements SYSTEM "dtd/supplier.dtd">
+
+<supplier>
+  <name>Cinnabon</name>
+  <address>
+    <country>country1</country>
+    <state>state2</state>
+    <city>city2</city>
+    <street>street2</street>
+    <zip>22222</zip>
+  </address>
+  <contract>
+    <start_date>2022-06-15</start_date>
+    <end_date>2024-06-14</end_date>
+    <details>Negotiation on seasonal items.</details>
+  </contract>
+</supplier>
