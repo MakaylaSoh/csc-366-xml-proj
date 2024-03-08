@@ -10,23 +10,22 @@ CREATE TABLE xml_rewards_account (
 
 CREATE TABLE xml_customer (
   id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  rewards_account_id INTEGER,
   xml_doc TEXT,
-  FOREIGN KEY (store_id) REFERENCES xml_store(id),
-  FOREIGN KEY (bank_id) REFERENCES xml_bank(id)
+  FOREIGN KEY (rewards_account_id) REFERENCES xml_rewards_account(id),
 );
 
 
 INSERT INTO xml_rewards_account (xml_doc) VALUES  (
 '<?xml version="1.0"?>
-<rewards>
-  <account_number>
-    <name_on_account>name1</name_on_account>
-    <total_points>10</total_points>
-  </account_number>
-</rewards>');
+<rewards_account>
+  <account_number>1</account_number>
+  <name_on_account>name1</name_on_account>
+  <total_points>10</total_points>
+</rewards_account>');
 
 
-INSERT INTO xml_customer (xml_doc) VALUES  (
+INSERT INTO xml_customer (rewards_account_id, xml_doc) VALUES  (1,
 '<?xml version="1.0"?>
 <customer>
     <first_name>name1</first_name>
