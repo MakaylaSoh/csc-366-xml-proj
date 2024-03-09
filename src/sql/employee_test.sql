@@ -21,6 +21,14 @@ CREATE TABLE xml_employee (
   FOREIGN KEY (bank_id) REFERENCES xml_bank(id)
 );
 
+CREATE TABLE xml_work_shift (
+  id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  employee_id INTEGER,
+  xml_doc TEXT,
+  FOREIGN KEY (employee_id) REFERENCES xml_employee(id)
+);
+
+
 INSERT INTO xml_store (xml_doc) VALUES  (
 '<?xml version="1.0"?>
 <store>
@@ -66,3 +74,13 @@ INSERT INTO xml_employee (store_id, bank_id, xml_doc) VALUES  (1, 1,
     <birthday>2002-09-12</birthday> 
     <hourly_rate>20</hourly_rate>
 </employee>');
+
+
+INSERT INTO xml_work_shift (employee_id, xml_doc) VALUES  (1,
+'<?xml version="1.0"?>
+<xml_work_shift>
+  <date>2024-04-16</date>
+  <clock_in_time>09:00</clock_out_time>
+  <clock_out_time>17:30</clock_out_time>
+  <total_hours>08:30</total_hours>
+</xml_work_shift>');
