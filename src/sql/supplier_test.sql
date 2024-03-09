@@ -30,12 +30,16 @@ CREATE TABLE xml_supplier_contract (
   FOREIGN KEY (store_id) REFERENCES xml_store(id)
 );
 
+INSERT INTO xml_order (xml_doc) VALUES  (
+'<order> 
+    <order_time>2020-01-08T05:01:04</order_time>
+    <order_date>2020-01-08</order_date> 
+</order>');
 
-
-INSERT INTO xml_supplier (xml_doc) VALUES  (
-'<supplier_contract id="sc2">
-     <supplier id="s2"/>
-        <store id="ID2">
+INSERT INTO xml_supplier_contract (supplier_id, store_id, xml_doc) VALUES (1, 1) (
+'<supplier_contract>
+     <supplier/>
+        <store id>
             <address>
                 <country>Country1</country>
                 <state>State1</state>
