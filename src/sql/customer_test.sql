@@ -12,7 +12,7 @@ CREATE TABLE xml_customer (
   id INTEGER PRIMARY KEY AUTO_INCREMENT,
   rewards_account_id INTEGER,
   xml_doc TEXT,
-  FOREIGN KEY (rewards_account_id) REFERENCES xml_rewards_account(id),
+  FOREIGN KEY (rewards_account_id) REFERENCES xml_rewards_account(id)
 );
 
 

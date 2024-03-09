@@ -43,7 +43,7 @@ INSERT INTO xml_bank (xml_doc) VALUES  (
 </bank>');
 
 
-INSERT INTO xml_employee (store_id, bank_id, xml_doc) VALUES  (1, 1
+INSERT INTO xml_employee (store_id, bank_id, xml_doc) VALUES  (1, 1,
 '<?xml version="1.0"?>
 <employee> 
     <firstname>first1</firstname>
