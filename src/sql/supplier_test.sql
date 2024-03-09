@@ -4,6 +4,7 @@ USE supplier_db;
 
 CREATE TABLE xml_supplier (
   id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  name TEXT,
   xml_doc TEXT
 );
 
@@ -29,6 +30,12 @@ CREATE TABLE xml_supplier_contract (
   FOREIGN KEY (supplier_id) REFERENCES xml_supplier(id),
   FOREIGN KEY (store_id) REFERENCES xml_store(id)
 );
+
+INSERT INTO xml_supplier (xml_doc) VALUES  (
+'<supplier>
+  <name>test</name>
+</supplier>
+');
 
 INSERT INTO xml_order (xml_doc) VALUES  (
 '<order> 
