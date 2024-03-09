@@ -16,7 +16,7 @@ xmllint --noout --dtdvalid [path_to_dtd_file] [path_to_xml_file]
 
 Example:
 ```
-xmllint --noout --dtdvalid ./src/dtd/employee.dtd ./src/test.xml
+xmllint --noout --dtdvalid ./src/dtd/store.dtd ./src/store_test.xml
 ```
 
 ## MYSQL files
