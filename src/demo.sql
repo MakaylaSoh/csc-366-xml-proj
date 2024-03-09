@@ -95,6 +95,24 @@ INSERT INTO xml_store (xml_doc) VALUES (
       <clock_out_time>21:00</clock_out_time>
       <total_hours>05.00</total_hours>
     </scheduled_work_shift>
+    <actual_work_shift>
+      <date>2024-03-02</date>
+      <clock_in_time>07:00</clock_in_time>
+      <clock_out_time>12:30</clock_out_time>
+      <total_hours>05.50</total_hours>
+    </actual_work_shift>
+    <actual_work_shift>
+      <date>2024-03-03</date>
+      <clock_in_time>07:00</clock_in_time>
+      <clock_out_time>01:00</clock_out_time>
+      <total_hours>06.00</total_hours>
+    </actual_work_shift>
+    <actual_work_shift>
+      <date>2024-03-04</date>
+      <clock_in_time>16:00</clock_in_time>
+      <clock_out_time>21:00</clock_out_time>
+      <total_hours>05.00</total_hours>
+    </actual_work_shift>
   </employee>
   <employee>
     <firstname>firstname3</firstname>
@@ -125,6 +143,18 @@ INSERT INTO xml_store (xml_doc) VALUES (
       <clock_out_time>21:00</clock_out_time>
       <total_hours>05.00</total_hours>
     </scheduled_work_shift>
+    <actual_work_shift>
+      <date>2024-01-03</date>
+      <clock_in_time>16:30</clock_in_time>
+      <clock_out_time>21:30</clock_out_time>
+      <total_hours>05.00</total_hours>
+    </actual_work_shift>
+    <actual_work_shift>
+      <date>2024-02-03</date>
+      <clock_in_time>10:00</clock_in_time>
+      <clock_out_time>14:00</clock_out_time>
+      <total_hours>04.00</total_hours>
+    </actual_work_shift>
   </employee>
   <order>
     <total_cost>60.00</total_cost>
