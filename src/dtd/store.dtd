@@ -7,4 +7,3 @@
 <!ELEMENT address (country, state, city, street, zip)>
 
 <!ELEMENT store (address)>
-<!ATTLIST store id ID #REQUIRED>

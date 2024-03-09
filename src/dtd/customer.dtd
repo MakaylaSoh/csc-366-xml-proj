@@ -2,8 +2,7 @@
 <!ELEMENT firstname (#PCDATA)>
 <!ELEMENT lastname (#PCDATA)>
 
-<!ELEMENT customer (id, firstname, lastname)>
-<!ATTLIST customer id ID #REQUIRED>
+<!ELEMENT customer (id, firstname, lastname, rewards_account*)>
 
 <!-- Rewards_Account -->
 <!ELEMENT account_number (#PCDATA)>
@@ -11,4 +10,3 @@
 <!ELEMENT total_points (#PCDATA)>
 
 <!ELEMENT rewards_account (account_number, name_on_account, total_points)>
-<!ATTLIST rewards_account id ID #REQUIRED>
