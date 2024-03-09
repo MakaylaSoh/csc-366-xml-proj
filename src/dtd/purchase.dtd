@@ -22,7 +22,7 @@ A rewards accout is separate.
 <!ELEMENT customer (payment_method, card_number?)>
 
 <!-- Purchase  -->
-<!ELEMENT purchase (customer, order)>
+<!ELEMENT purchase (customer, order+)>
 
 <!-- Rewards Account -->
 <!ELEMENT account_number (#PCDATA)>
