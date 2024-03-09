@@ -34,7 +34,6 @@ Store holds Employee.
 <!ELEMENT city (#PCDATA)>
 <!ELEMENT street (#PCDATA)>
 <!ELEMENT zip (#PCDATA)>
-
 <!ELEMENT address (country, state, city, street, zip)>
 
 <!-- Store -->
