@@ -50,4 +50,8 @@ INSERT INTO xml_supplier_contract (supplier_id, store_id, xml_doc) VALUES (1, 1)
         </store>
 </supplier_contract>');
 
-
+INSERT INTO xml_product (xml_doc) VALUES  (
+'<product>
+  <total_cost>18</total_cost>
+  <quantity>2</quantity>
+</product>');
