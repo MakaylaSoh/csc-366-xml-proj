@@ -293,7 +293,7 @@ INSERT INTO xml_store (xml_doc) VALUES (
       <clock_in_time>16:00</clock_in_time>
       <clock_out_time>21:00</clock_out_time>
       <total_hours>05.00</total_hours>
-    </scheduled_work_shift>
+    </actual_work_shift>
   </employee>
 </store>');
 

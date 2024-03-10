@@ -1,2 +1,2 @@
-SELECT ExtractValue(xml_doc, '/employee/firstname') 
-FROM xml_store
+SELECT COUNT(ExtractValue(xml_doc, '//store'))
+FROM xml_store;
