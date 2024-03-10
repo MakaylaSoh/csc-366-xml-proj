@@ -3,6 +3,10 @@ A Purchase consists of both a Customer (payment methods info) and an Order (spec
 A rewards accout is separate.
  -->
 
+ <!-- "import" supplier dtd -->
+<!ENTITY % supplier_elements SYSTEM "supplier.dtd">
+%supplier_elements;
+
 <!-- Product -->
 <!ELEMENT item_name (#PCDATA)>
 <!ELEMENT supplier_name (#PCDATA)>
@@ -21,7 +25,7 @@ A rewards accout is separate.
 <!ELEMENT customer (card_number*, rewards_account*)>
 
 <!-- Purchase  -->
-<!ELEMENT purchase (customer, order)>
+<!ELEMENT purchase ((customer|supplier), order+)>
 
 <!-- Rewards Account -->
 <!ELEMENT account_number (#PCDATA)>
