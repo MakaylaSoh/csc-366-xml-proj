@@ -351,8 +351,13 @@ INSERT INTO xml_purchase (store_id, xml_doc) VALUES  (1,
 '<?xml version="1.0"?>
 <purchase>
   <customer>
-    <payment_method>credit</payment_method>
     <card_number>*****1111</card_number>
+    <rewards_account>
+      <account_number>1</account_number>
+      <phone_number>(111)111-1111</phone_number>
+      <name_on_account>name1</name_on_account>
+      <total_points>10</total_points>
+    </rewards_account>
   </customer>
   <order>
     <total_cost>15.97</total_cost>
@@ -390,8 +395,13 @@ INSERT INTO xml_purchase (store_id, xml_doc) VALUES  (1,
 '<?xml version="1.0"?>
 <purchase>
   <customer>
-    <payment_method>debit</payment_method>
     <card_number>*****2222</card_number>
+    <rewards_account>
+      <account_number>2</account_number>
+      <phone_number>(222)222-2222</phone_number>
+      <name_on_account>name2</name_on_account>
+      <total_points>11</total_points>
+    </rewards_account>
   </customer>
   <order>
     <total_cost>14.69</total_cost>
@@ -423,8 +433,13 @@ INSERT INTO xml_purchase (store_id, xml_doc) VALUES  (2,
 '<?xml version="1.0"?>
 <purchase>
   <customer>
-    <payment_method>debit</payment_method>
     <card_number>*****3333</card_number>
+    <rewards_account>
+      <account_number>3</account_number>
+      <phone_number>(333)333-3333</phone_number>
+      <name_on_account>name3</name_on_account>
+      <total_points>10</total_points>
+    </rewards_account>
   </customer>
   <order>
     <total_cost>22.39</total_cost>
@@ -458,34 +473,48 @@ INSERT INTO xml_purchase (store_id, xml_doc) VALUES  (2,
 </purchase>');
 
 
-INSERT INTO xml_rewards_account (purchase_id, xml_doc) VALUES  (1,
+INSERT INTO xml_purchase (store_id, xml_doc) VALUES  (2,
 '<?xml version="1.0"?>
-<rewards_account>
-  <account_number>1</account_number>
-  <phone_number>(111)111-1111</phone_number>
-  <name_on_account>name1</name_on_account>
-  <total_points>10</total_points>
-</rewards_account>');
-
-
-INSERT INTO xml_rewards_account (purchase_id, xml_doc) VALUES  (2,
-'<?xml version="1.0"?>
-<rewards_account>
-  <account_number>2</account_number>
-  <phone_number>(222)222-2222</phone_number>
-  <name_on_account>name2</name_on_account>
-  <total_points>11</total_points>
-</rewards_account>');
-
-
-INSERT INTO xml_rewards_account (purchase_id, xml_doc) VALUES  (3,
-'<?xml version="1.0"?>
-<rewards_account>
-  <account_number>3</account_number>
-  <phone_number>(333)333-3333</phone_number>
-  <name_on_account>name1</name_on_account>
-  <total_points>10</total_points>
-</rewards_account>');
+<purchase>
+  <customer>
+    <card_number>*****3333</card_number>
+    <rewards_account>
+      <account_number>3</account_number>
+      <phone_number>(333)333-3333</phone_number>
+      <name_on_account>name3</name_on_account>
+      <total_points>10</total_points>
+    </rewards_account>
+  </customer>
+  <order>
+    <total_cost>35.39</total_cost>
+    <order_time>12:30</order_time>
+    <order_date>2024-04-17</order_date>
+    <product>
+      <item_name>tofu</item_name>
+      <supplier_name>supplier6</supplier_name>
+      <quantity>1</quantity>
+      <unit_price>4.15</unit_price>
+    </product>
+    <product>
+      <item_name>cake</item_name>
+      <supplier_name>supplier6</supplier_name>
+      <quantity>1</quantity>
+      <unit_price>3.99</unit_price>
+    </product>
+    <product>
+      <item_name>macaroons</item_name>
+      <supplier_name>supplier2</supplier_name>
+      <quantity>1</quantity>
+      <unit_price>4.50</unit_price>
+    </product>
+    <product>
+      <item_name>bread</item_name>
+      <supplier_name>supplier2</supplier_name>
+      <quantity>1</quantity>
+      <unit_price>9.75</unit_price>
+    </product>
+  </order>
+</purchase>');
 
 
 INSERT INTO xml_supplier (xml_doc) VALUES  (

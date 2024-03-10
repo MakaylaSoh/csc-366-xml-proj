@@ -17,9 +17,8 @@ A rewards accout is separate.
 <!ELEMENT order (total_cost, order_time, order_date, product+)>
 
 <!-- Customer -->
-<!ELEMENT payment_method (#PCDATA)>
 <!ELEMENT card_number (#PCDATA)>
-<!ELEMENT customer (payment_method, card_number?)>
+<!ELEMENT customer (card_number*, rewards_account*)>
 
 <!-- Purchase  -->
 <!ELEMENT purchase (customer, order)>
