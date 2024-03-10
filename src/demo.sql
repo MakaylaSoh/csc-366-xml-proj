@@ -21,12 +21,6 @@ CREATE TABLE xml_rewards_account (
   FOREIGN KEY (purchase_id) REFERENCES xml_purchase(id)
 );
 
-CREATE TABLE xml_supplier (
-  id INTEGER PRIMARY KEY AUTO_INCREMENT,
-  xml_doc TEXT
-);
-
-
 INSERT INTO xml_store (xml_doc) VALUES (
 '<store>
   <address>
@@ -174,28 +168,6 @@ INSERT INTO xml_store (xml_doc) VALUES (
       <total_hours>04.00</total_hours>
     </actual_work_shift>
   </employee>
-  <order>
-    <total_cost>60.00</total_cost>
-    <order_time>02:00</order_time>
-    <order_date>2024-04-04</order_date>
-    <product>
-      <item_name>12oz Coke Bottle</item_name>
-      <supplier_name>Coca Cola</supplier_name>
-      <quantity>50</quantity>
-      <unit_price>0.99</unit_price>
-    </product>
-  </order>
-    <order>
-    <total_cost>60.00</total_cost>
-    <order_time>06:00</order_time>
-    <order_date>2024-03-04</order_date>
-    <product>
-      <item_name>Frozen Minibons</item_name>
-      <supplier_name>Cinnabon</supplier_name>
-      <quantity>100</quantity>
-      <unit_price>2.50</unit_price>
-    </product>
-  </order>
 </store>');
 
 
@@ -323,6 +295,26 @@ INSERT INTO xml_store (xml_doc) VALUES (
       <total_hours>05.00</total_hours>
     </actual_work_shift>
   </employee>
+</store>');
+
+INSERT INTO xml_purchase (store_id, xml_doc) VALUES  (1,
+'<?xml version="1.0"?>
+<purchase>
+  <supplier>
+    <name>Coca Cola</name>
+    <address>
+      <country>country1</country>
+      <state>state1</state>
+      <city>city1</city>
+      <street>street1</street>
+      <zip>11111</zip>
+    </address>
+    <contract>
+      <start_date>2023-01-01</start_date>
+      <end_date>2025-01-01</end_date>
+      <details>Discount on drinks.</details>
+    </contract>
+  </supplier>
   <order>
     <total_cost>60.00</total_cost>
     <order_time>02:00</order_time>
@@ -345,19 +337,58 @@ INSERT INTO xml_store (xml_doc) VALUES (
       <unit_price>2.50</unit_price>
     </product>
   </order>
-</store>');
+</purchase>');
+
+
+INSERT INTO xml_purchase (store_id, xml_doc) VALUES  (1,
+'<?xml version="1.0"?>
+<purchase>
+  <supplier>
+    <name>Cinnabon</name>
+    <address>
+      <country>country1</country>
+      <state>state2</state>
+      <city>city2</city>
+      <street>street2</street>
+      <zip>22222</zip>
+    </address>
+    <contract>
+      <start_date>2022-06-15</start_date>
+      <end_date>2024-06-14</end_date>
+      <details>Negotiation on seasonal items.</details>
+    </contract>
+  </supplier>
+  <order>
+    <total_cost>60.00</total_cost>
+    <order_time>02:00</order_time>
+    <order_date>2024-04-04</order_date>
+    <product>
+      <item_name>12oz Coke Bottle</item_name>
+      <supplier_name>Coca Cola</supplier_name>
+      <quantity>50</quantity>
+      <unit_price>0.99</unit_price>
+    </product>
+  </order>
+    <order>
+    <total_cost>60.00</total_cost>
+    <order_time>06:00</order_time>
+    <order_date>2024-03-04</order_date>
+    <product>
+      <item_name>Frozen Minibons</item_name>
+      <supplier_name>Cinnabon</supplier_name>
+      <quantity>100</quantity>
+      <unit_price>2.50</unit_price>
+    </product>
+  </order>
+</purchase>');
+
 
 INSERT INTO xml_purchase (store_id, xml_doc) VALUES  (1,
 '<?xml version="1.0"?>
 <purchase>
   <customer>
+    <payment_method>credit</payment_method>
     <card_number>*****1111</card_number>
-    <rewards_account>
-      <account_number>1</account_number>
-      <phone_number>(111)111-1111</phone_number>
-      <name_on_account>name1</name_on_account>
-      <total_points>10</total_points>
-    </rewards_account>
   </customer>
   <order>
     <total_cost>15.97</total_cost>
@@ -395,13 +426,8 @@ INSERT INTO xml_purchase (store_id, xml_doc) VALUES  (1,
 '<?xml version="1.0"?>
 <purchase>
   <customer>
+    <payment_method>debit</payment_method>
     <card_number>*****2222</card_number>
-    <rewards_account>
-      <account_number>2</account_number>
-      <phone_number>(222)222-2222</phone_number>
-      <name_on_account>name2</name_on_account>
-      <total_points>11</total_points>
-    </rewards_account>
   </customer>
   <order>
     <total_cost>14.69</total_cost>
@@ -433,13 +459,8 @@ INSERT INTO xml_purchase (store_id, xml_doc) VALUES  (2,
 '<?xml version="1.0"?>
 <purchase>
   <customer>
+    <payment_method>debit</payment_method>
     <card_number>*****3333</card_number>
-    <rewards_account>
-      <account_number>3</account_number>
-      <phone_number>(333)333-3333</phone_number>
-      <name_on_account>name3</name_on_account>
-      <total_points>10</total_points>
-    </rewards_account>
   </customer>
   <order>
     <total_cost>22.39</total_cost>
@@ -473,82 +494,31 @@ INSERT INTO xml_purchase (store_id, xml_doc) VALUES  (2,
 </purchase>');
 
 
-INSERT INTO xml_purchase (store_id, xml_doc) VALUES  (2,
+INSERT INTO xml_rewards_account (purchase_id, xml_doc) VALUES  (1,
 '<?xml version="1.0"?>
-<purchase>
-  <customer>
-    <card_number>*****3333</card_number>
-    <rewards_account>
-      <account_number>3</account_number>
-      <phone_number>(333)333-3333</phone_number>
-      <name_on_account>name3</name_on_account>
-      <total_points>10</total_points>
-    </rewards_account>
-  </customer>
-  <order>
-    <total_cost>35.39</total_cost>
-    <order_time>12:30</order_time>
-    <order_date>2024-04-17</order_date>
-    <product>
-      <item_name>tofu</item_name>
-      <supplier_name>supplier6</supplier_name>
-      <quantity>1</quantity>
-      <unit_price>4.15</unit_price>
-    </product>
-    <product>
-      <item_name>cake</item_name>
-      <supplier_name>supplier6</supplier_name>
-      <quantity>1</quantity>
-      <unit_price>3.99</unit_price>
-    </product>
-    <product>
-      <item_name>macaroons</item_name>
-      <supplier_name>supplier2</supplier_name>
-      <quantity>1</quantity>
-      <unit_price>4.50</unit_price>
-    </product>
-    <product>
-      <item_name>bread</item_name>
-      <supplier_name>supplier2</supplier_name>
-      <quantity>1</quantity>
-      <unit_price>9.75</unit_price>
-    </product>
-  </order>
-</purchase>');
+<rewards_account>
+  <account_number>1</account_number>
+  <phone_number>(111)111-1111</phone_number>
+  <name_on_account>name1</name_on_account>
+  <total_points>10</total_points>
+</rewards_account>');
 
 
-INSERT INTO xml_supplier (xml_doc) VALUES  (
+INSERT INTO xml_rewards_account (purchase_id, xml_doc) VALUES  (2,
 '<?xml version="1.0"?>
-<supplier>
-  <name>Coca Cola</name>
-  <address>
-    <country>country1</country>
-    <state>state1</state>
-    <city>city1</city>
-    <street>street1</street>
-    <zip>11111</zip>
-  </address>
-  <contract>
-    <start_date>2023-01-01</start_date>
-    <end_date>2025-01-01</end_date>
-    <details>Discount on drinks.</details>
-  </contract>
-</supplier>');
+<rewards_account>
+  <account_number>2</account_number>
+  <phone_number>(222)222-2222</phone_number>
+  <name_on_account>name2</name_on_account>
+  <total_points>11</total_points>
+</rewards_account>');
 
-INSERT INTO xml_supplier (xml_doc) VALUES  (
+
+INSERT INTO xml_rewards_account (purchase_id, xml_doc) VALUES  (3,
 '<?xml version="1.0"?>
-<supplier>
-  <name>Cinnabon</name>
-  <address>
-    <country>country1</country>
-    <state>state2</state>
-    <city>city2</city>
-    <street>street2</street>
-    <zip>22222</zip>
-  </address>
-  <contract>
-    <start_date>2022-06-15</start_date>
-    <end_date>2024-06-14</end_date>
-    <details>Negotiation on seasonal items.</details>
-  </contract>
-</supplier>');
+<rewards_account>
+  <account_number>3</account_number>
+  <phone_number>(333)333-3333</phone_number>
+  <name_on_account>name1</name_on_account>
+  <total_points>10</total_points>
+</rewards_account>');
