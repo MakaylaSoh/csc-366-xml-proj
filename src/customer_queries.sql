@@ -1,8 +1,9 @@
 -- -- Customers are able to purchase more than one item per order
-SELECT 
-    xml_purchase.id as purchaseId, 
-    ExtractValue(xml_doc, '/purchase/order/product/item_name') as extractedValues
-FROM xml_purchase;
+SELECT  
+    xml_purchase.id,
+    ExtractValue(xml_doc, '/purchase/order/product/item_name') AS ItemsPurchased
+FROM xml_purchase
+WHERE ExtractValue(xml_doc, '/purchase/customer') IS NOT NULL AND LENGTH(ExtractValue(xml_doc, '/purchase/customer/card_number')) = 9;
 
 
 -- -- Each customer can create an account associated with their phone number to earn rewards with future purchases
@@ -11,6 +12,7 @@ SELECT
     ExtractValue(xml_doc, '/purchase/customer/rewards_account/phone_number') AS phoneNumber, 
     SUM(CAST(ExtractValue(xml_doc, '/purchase/customer/rewards_account/total_points') AS UNSIGNED)) AS totalPoints
 FROM xml_purchase
+WHERE ExtractValue(xml_doc, '/purchase/customer') IS NOT NULL AND LENGTH(ExtractValue(xml_doc, '/purchase/customer/card_number')) = 9
 GROUP BY customerName, phoneNumber;
 
 
