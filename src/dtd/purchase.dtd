@@ -16,7 +16,7 @@ A rewards accout is separate.
 
 <!-- Order -->
 <!ELEMENT total_cost (#PCDATA)>
-<!ELEMENT order_time (#PCDATA)>
+<!ELEMENT order_time (#PCDATA)> <!-- HH:mm -->
 <!ELEMENT order_date (#PCDATA)>
 <!ELEMENT order (total_cost, order_time, order_date, product+)>
 

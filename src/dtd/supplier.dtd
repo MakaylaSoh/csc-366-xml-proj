@@ -7,7 +7,7 @@
 <!ELEMENT address (country, state, city, street, zip)>
 
 <!-- Supplier Contract -->
-<!ELEMENT start_date (#PCDATA)>
+<!ELEMENT start_date (#PCDATA)> <!-- YYYY-MM-DD -->
 <!ELEMENT end_date (#PCDATA)>
 <!ELEMENT details (#PCDATA)>
 <!ELEMENT contract (start_date, end_date, details)>
