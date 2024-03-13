@@ -1,3 +1,5 @@
+-- Original queries were not possible in xml, so simplied them into these queries
+
 -- -- First names of all employees for each store
 SELECT 
     xml_store.id, 
