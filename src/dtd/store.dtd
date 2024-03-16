@@ -17,6 +17,7 @@ Store holds Employee.
 <!ELEMENT total_hours (#PCDATA)> 
 
 <!ELEMENT scheduled_work_shift (date, clock_in_time, clock_out_time, total_hours)>
+<!ELEMENT actual_work_shift (date, clock_in_time, clock_out_time, total_hours)>
 
 <!-- Employee -->
 <!ELEMENT firstname (#PCDATA)>
@@ -25,7 +26,7 @@ Store holds Employee.
 <!ELEMENT birthday (#PCDATA)>  <!-- expected DATE format -->
 <!ELEMENT hourly_rate (#PCDATA)>
 
-<!ELEMENT employee (firstname, lastname, position, bank, birthday, hourly_rate, scheduled_work_shift*)>
+<!ELEMENT employee (firstname, lastname, position, bank, birthday, hourly_rate, scheduled_work_shift*, actual_work_shift*)>
 
 <!-- Address -->
 <!ELEMENT country (#PCDATA)>
@@ -33,7 +34,6 @@ Store holds Employee.
 <!ELEMENT city (#PCDATA)>
 <!ELEMENT street (#PCDATA)>
 <!ELEMENT zip (#PCDATA)>
-
 <!ELEMENT address (country, state, city, street, zip)>
 
 <!-- Store -->

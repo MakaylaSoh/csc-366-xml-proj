@@ -1,9 +1,13 @@
-<!-- "import" store dtd -->
-<!ENTITY % store_element SYSTEM "store.dtd">
-%store_element;
+<!-- Address -->
+<!ELEMENT country (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT zip (#PCDATA)>
+<!ELEMENT address (country, state, city, street, zip)>
 
 <!-- Supplier Contract -->
-<!ELEMENT start_date (#PCDATA)>
+<!ELEMENT start_date (#PCDATA)> <!-- YYYY-MM-DD -->
 <!ELEMENT end_date (#PCDATA)>
 <!ELEMENT details (#PCDATA)>
 <!ELEMENT contract (start_date, end_date, details)>
