@@ -439,6 +439,51 @@ INSERT INTO xml_supplier (xml_doc) VALUES  (
     <details>Negotiation on seasonal items.</details>
   </contract>
 </supplier>');
+-- 1: Find the total money spent by a store on order between two given dates
+SELECT
+        SUM(ExtractValue(xml_doc, "//store/order/total_cost[../order_date > '2024-03-01' and ../order_date < '2024-03-10']")) AS total_cost
+FROM
+    xml_store;
 
-SELECT ExtractValue(xml_doc, '/purchase/order/total_cost') 
+-- Hypothetical SQL:
+-- SELECT SUM(price) FROM SupplierContractProduct scp, SupplierContract sc, Store s
+-- WHERE scp.supplier_contract = sc.id AND sc.store = s.id AND scp.deliverytime BETWEEN date1 AND date2;
+
+
+-- 2: Find all suppliers to a specific store
+
+SELECT id, ExtractValue(xml_doc, "//store/order/product/supplier_name") as suppliers
+FROM xml_store
+WHERE id = 1; 
+
+-- Hypothetical SQL:
+
+-- select su.id from suppliers, SupplierContract sc, Store s
+-- where  su.id = sc.supplier and sc.store = s.id and s.id = [storeid]
+
+
+--3: Find the product that made the most money for a store on a given day
+SELECT (ExtractValue(xml_doc, "//purchase/order/product/quantity * //purchase/order/product/unit_price"))
 FROM xml_purchase;
+
+--This query proved impossible to execute in XPath, as it requires simultaneously getting two disparate values out of the tree,
+-- which cannot be done in our limited exploration.
+
+-- Hypothetical SQL:
+
+-- with a as (select * from order where date = [date]),
+-- b as (select * from product, a where order = a.order_id),
+-- c as (select SUM(price) as total from b group by product.id),
+-- d as (select MAX(total) as bigTotal from c)
+-- select product.id from c, d where total = bigTotal
+
+
+--4: Find the sum of the prices of the store’s supply contracts.
+
+SELECT (ExtractValue(xml_doc, "sum(//store/order/total_cost)")) AS total_cost
+FROM
+    xml_store
+WHERE id = 1
+-- Hypothetical SQL:
+-- SELECT SUM(price) FROM SupplierContractProduct scp, SupplierContract sc, Store s
+-- WHERE scp.supplier_contract = sc.id AND sc.store = s.id AND s.id = [storeid];
